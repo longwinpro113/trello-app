@@ -12,6 +12,9 @@ function App() {
             <Button variant="contained">Contained</Button>
             <Button variant="outlined">Outlined</Button>
 
+            <br/>
+            <AccessAlarmIcon />
+            <ThreeDRotation />
             <br />
             <HomeIcon />
             <HomeIcon color="primary" />
@@ -19,7 +22,7 @@ function App() {
             <HomeIcon color="success" />
             <HomeIcon color="action" />
             <HomeIcon color="disabled" />
-            <HomeIcon sx={{ color: pink[200] }} />
+            <HomeIcon sx={{ color: pink[100] }} />
         </>
     );
 }
