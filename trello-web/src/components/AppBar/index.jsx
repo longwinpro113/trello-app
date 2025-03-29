@@ -15,15 +15,19 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import Tooltip from '@mui/material/Tooltip'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import Profiles from './Menus/Profiles'
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
 
 function AppBar() {
   return (
-    <Box px={2} sx={{
+    <Box sx={{
       width: '100%',
       height: (theme) => theme.trello.appBarHeight,
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      gap: 2,
+      paddingX: 2,
+      overflowX: 'auto'
     }}>
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -37,17 +41,25 @@ function AppBar() {
           </Typography>
         </Box>
 
-        <Workspaces />
-        <Recent />
-        <Starred />
-        <Templates />
+        <Box sx={{
+          display: {
+            xs: 'none',
+            md: 'flex',
+            gap: 1
+          }
+        }}>
+          <Workspaces />
+          <Recent />
+          <Starred />
+          <Templates />
+          <Button variant="outlined" startIcon={<LibraryAddIcon/>}>Create</Button>
+        </Box>
 
-        <Button variant="outlined">Create</Button>
       </Box>
 
 
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <TextField id="outlined-search" label="Search..." type="search" size='small' />
+        <TextField id="outlined-search" label="Search..." type="search" size='small' sx={{ minWidth: '120px' }} />
 
         <ModeSelect />
 
